@@ -39,7 +39,7 @@
 #include "boost/thread.hpp"
 #include "boost/shared_ptr.hpp"
 
-#include "ros/time.h"
+#include "ros2_time/time.hpp"
 
 #include "connection.h"
 #include "simple_filter.h"

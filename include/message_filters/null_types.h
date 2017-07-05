@@ -38,9 +38,9 @@
 #include "connection.h"
 
 #include <boost/shared_ptr.hpp>
-#include <ros/time.h>
+#include <ros2_time/time.h>
 
-#include <ros/message_traits.h>
+//#include <ros/message_traits.h>  // TODO: need this header
 
 namespace message_filters
 {

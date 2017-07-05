@@ -38,8 +38,8 @@
 #include <boost/noncopyable.hpp>
 
 #include "connection.h"
-#include <ros/message_event.h>
-#include <ros/parameter_adapter.h>
+//#include <ros/message_event.h>  // TODO: figure this out
+//#include <ros/parameter_adapter.h>  // TODO: figure this out
 
 #include <boost/bind.hpp>
 #include <boost/thread/mutex.hpp>

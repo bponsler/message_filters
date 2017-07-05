@@ -35,7 +35,7 @@
 #ifndef MESSAGE_FILTERS_SUBSCRIBER_H
 #define MESSAGE_FILTERS_SUBSCRIBER_H
 
-#include <ros/ros.h>
+#include <rclcpp/rclcpp.hpp>
 
 #include <boost/thread/mutex.hpp>
 
@@ -60,7 +60,7 @@ public:
    * \param transport_hints The transport hints to pass along
    * \param callback_queue The callback queue to pass along
    */
-  virtual void subscribe(ros::NodeHandle& nh, const std::string& topic, uint32_t queue_size, const ros::TransportHints& transport_hints = ros::TransportHints(), ros::CallbackQueueInterface* callback_queue = 0) = 0;
+  virtual void subscribe(rclcpp::node::Node::SharedPtr nh, const std::string& topic, uint32_t queue_size, const ros::TransportHints& transport_hints = ros::TransportHints(), ros::CallbackQueueInterface* callback_queue = 0) = 0;
   /**
    * \brief Re-subscribe to a topic.  Only works if this subscriber has previously been subscribed to a topic.
    */
@@ -109,7 +109,7 @@ public:
    * \param transport_hints The transport hints to pass along
    * \param callback_queue The callback queue to pass along
    */
-  Subscriber(ros::NodeHandle& nh, const std::string& topic, uint32_t queue_size, const ros::TransportHints& transport_hints = ros::TransportHints(), ros::CallbackQueueInterface* callback_queue = 0)
+  Subscriber(rclcpp::node::Node::SharedPtr nh, const std::string& topic, uint32_t queue_size, const ros::TransportHints& transport_hints = ros::TransportHints(), ros::CallbackQueueInterface* callback_queue = 0)
   {
     subscribe(nh, topic, queue_size, transport_hints, callback_queue);
   }
@@ -137,7 +137,7 @@ public:
    * \param transport_hints The transport hints to pass along
    * \param callback_queue The callback queue to pass along
    */
-  void subscribe(ros::NodeHandle& nh, const std::string& topic, uint32_t queue_size, const ros::TransportHints& transport_hints = ros::TransportHints(), ros::CallbackQueueInterface* callback_queue = 0)
+  void subscribe(rclcpp::node::Node::SharedPtr nh, const std::string& topic, uint32_t queue_size, const ros::TransportHints& transport_hints = ros::TransportHints(), ros::CallbackQueueInterface* callback_queue = 0)
   {
     unsubscribe();
 

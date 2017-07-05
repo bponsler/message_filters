@@ -39,8 +39,8 @@
 
 #include "connection.h"
 #include "signal1.h"
-#include <ros/message_event.h>
-#include <ros/subscription_callback_helper.h>
+//#include <ros/message_event.h>  // TODO: figure out this header
+//#include <ros/subscription_callback_helper.h>  // TODO: figure out this header
 
 #include <boost/bind.hpp>
 
